@@ -1,4 +1,5 @@
 import { defaultToString } from "../utils.js";
+import { ValuePair } from "../models.js";
 
 export default class Dictionary {
 	constructor(toStrFn = defaultToString) {
@@ -86,26 +87,16 @@ export default class Dictionary {
 	}
 }
 
-class ValuePair {
-	constructor(key, value) {
-		this.key = key;
-		this.value = value;
-	}
-	toString() {
-		return `[#${this.key}: ${this.value}]`;
-	}
-}
-
 const dictionary = new Dictionary();
-dictionary.set('Gandalf', 'gandalf@email.com');
-dictionary.set('John', 'johnsnow@email.com');
-dictionary.set('Tyrion', 'tyrion@email.com');
-console.log(dictionary.hasKey('Gandalf'));
+dictionary.set("Gandalf", "gandalf@email.com");
+dictionary.set("John", "johnsnow@email.com");
+dictionary.set("Tyrion", "tyrion@email.com");
+console.log(dictionary.hasKey("Gandalf"));
 console.log(dictionary.size());
 console.log(dictionary.keys());
 console.log(dictionary.values());
-console.log(dictionary.get('Tyrion'));
-dictionary.remove('John');
+console.log(dictionary.get("Tyrion"));
+dictionary.remove("John");
 console.log(dictionary.keys());
 console.log(dictionary.values());
 console.log(dictionary.keyValues());

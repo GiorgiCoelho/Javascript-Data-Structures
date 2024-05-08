@@ -1,3 +1,5 @@
+import { ValuePair } from "../models.js";
+
 class HashTable {
 	constructor() {
 		this.table = {};
@@ -40,16 +42,6 @@ class HashTable {
 
 	hashCode(key) {
 		return this.loseloseHashCode(key);
-	}
-}
-
-class ValuePair {
-	constructor(key, value) {
-		this.key = key;
-		this.value = value;
-	}
-	toString() {
-		return `[#${this.key}: ${this.value}]`;
 	}
 }
 
